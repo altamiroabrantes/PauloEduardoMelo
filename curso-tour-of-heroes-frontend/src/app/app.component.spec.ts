@@ -4,7 +4,9 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      declarations: [
+        AppComponent
+      ],
     }).compileComponents();
   });
 
@@ -14,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'curso-tour-of-heroes-frontend' title`, () => {
+  it(`should have as title 'curso-tour-of-heroes-fontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('curso-tour-of-heroes-frontend');
+    expect(app.title).toEqual('curso-tour-of-heroes-fontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, curso-tour-of-heroes-frontend');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('curso-tour-of-heroes-fontend app is running!');
   });
 });
